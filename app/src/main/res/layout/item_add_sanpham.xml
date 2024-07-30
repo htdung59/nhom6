@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THÊM SẢN PHẨM MỚI"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="#E88364"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên sản phẩm: "
+            android:textSize="15dp"
+            />
+        <EditText
+            android:id="@+id/edt_tensp_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập tên sản phẩm"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giá: "
+            android:textSize="15dp"
+             />
+
+        <EditText
+            android:id="@+id/edt_giasp_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập giá tiền"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thương hiệu: "
+            android:textSize="15dp"
+            />
+        <EditText
+            android:id="@+id/edt_thuonghieu_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập thương hiệu"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xuất xứ: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_xuatxu_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập xuất xứ"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kích thước màn hình: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_kichthuocmanhinh_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập kích thước màn hình"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Màu sắc: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_mausac_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập màu sắc"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trọng lượng: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_trongluong_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập trọng lượng"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chất liệu: "
+            android:textSize="15dp" />
+        <EditText
+            android:id="@+id/edt_chatlieu_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập chất liệu"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CPU: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_cpu_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập cpu"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ổ cứng: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_ocung_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập ổ cứng"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ram: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_ram_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập ram"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rom: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_rom_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập rom"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Card: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_card_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập card"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tốc độ cpu: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_tocdocpu_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập tốc độ cpu"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cổng usb: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_congusb_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập số cổng usb"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vân tay: "
+            android:textSize="15dp"/>
+        <EditText
+            android:id="@+id/edt_vantay_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:background="#DAD6D6"
+            android:hint="Nhập vân tay"/>
+
+
+
+    </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>

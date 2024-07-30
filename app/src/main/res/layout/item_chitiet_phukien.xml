@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="7dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="180dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/phukien_laptop"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thông số kỹ thuật"
+                android:textSize="23dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"/>
+
+
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tên Sản Phẩm"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_tenpk_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RAM laptop abc"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Giá"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_gia_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#F44336"
+                    android:text="590000"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dung lượng"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_ram_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8GB"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loại RAM"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_loairam_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DDR 4"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bus RAM"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_busram_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4800MT/s"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hỗ trợ"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_hotro_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SO-DIMM(Laptop)"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Voltage"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_voltage_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1.1v"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thông tin hãng"
+                android:textSize="23dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"/>
+
+
+            <LinearLayout
+                android:paddingLeft="10dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hãng sản xuất"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_hangsanxuat_chitiet_pk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Samsung"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

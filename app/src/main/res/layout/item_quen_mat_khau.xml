@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LẤY LẠI MẬT KHẨU"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="#E88364"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:textSize="23dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập e-mail:"
+        android:textSize="15dp"/>
+    <EditText
+        android:id="@+id/edt_email_fogot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:background="#DAD6D6"
+        android:hint="Nhập email đã đăng kí" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_send_fogot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND EMAIL"
+        android:textSize="23dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:background="#E88364"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_huy_fogot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HỦY"
+        android:textSize="23dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:background="#E88364"/>
+</LinearLayout>

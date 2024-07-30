@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/trangchu"
+        android:title="Trang Chủ"
+        android:icon="@drawable/baseline_home_24"/>
+
+
+
+    <item
+        android:title="Danh Mục Sản Phẩm">
+        <menu>
+            <item
+                android:id="@+id/lapGaming_doHoa"
+                android:title="Laptop Gaming, Đồ Họa"
+                android:icon="@drawable/game"/>
+            <item
+                android:id="@+id/lapVanPhong_macbook"
+                android:title="Laptop Văn phòng, Macbook"
+                android:icon="@drawable/vanphong"/>
+<!--            <item-->
+<!--                android:id="@+id/phuKien"-->
+<!--                android:title="Phụ Kiện Laptop, PC, Mobile"-->
+<!--                android:icon="@drawable/phukien"/>-->
+        </menu>
+    </item>
+
+
+
+
+
+    <item
+        android:title="CSKH">
+        <menu>
+            <item
+                android:id="@+id/cskh"
+                android:title="Thông Tin Liên hệ"
+                android:icon="@drawable/call"/>
+
+        </menu>
+    </item>
+    <item
+        android:title="ADMIN">
+        <menu>
+
+            <item
+                android:id="@+id/quanli_sp_home"
+                android:title="Quản lí sản phẩm" />
+            <item
+                android:id="@+id/quanli_sp_gaming"
+                android:title="Quản lí SP gaming" />
+            <item
+                android:id="@+id/quanli_sp_vanphong"
+                android:title="Quản lí SP văn phòng" />
+<!--            <item-->
+<!--                android:id="@+id/quanli_phukien"-->
+<!--                android:title="Quản lí phụ kiện" />-->
+
+            <item
+                android:id="@+id/thongKe_dt"
+                android:title="Thống kê doanh thu" />
+
+
+
+        </menu>
+    </item>
+
+
+    <item
+        android:title="Người dùng">
+        <menu>
+            <item
+                android:id="@+id/giohang"
+                android:title="Giỏ Hàng Của Tôi"
+                android:icon="@drawable/giohang"/>
+            <item
+                android:id="@+id/lichsu"
+                android:title="Hóa đơn"
+                android:icon="@drawable/lichsu"/>
+            <item
+                android:id="@+id/doimk"
+                android:title="Đổi mật khẩu"
+                android:icon="@drawable/doimk"/>
+            <item
+                android:id="@+id/thoat"
+                android:title="Thoát"
+                android:icon="@drawable/baseline_logout_24"/>
+        </menu>
+    </item>
+
+
+</menu>

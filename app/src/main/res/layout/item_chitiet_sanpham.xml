@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:background="#C1B7B7"
+
+    android:layout_margin="7dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:padding="5dp"
+            android:src="@drawable/laptop_mau"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thông tin hàng hóa"
+            android:textSize="23dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_tensp_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tên Sản Phẩm"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txt_giasp_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Giá Sản Phẩm"
+                    android:textColor="#F44336"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_thuonghieu_chtiet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thương hiệu"
+                        android:textSize="15dp"/>
+                    <TextView
+                        android:id="@+id/txt_xuatxu_chtiet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Xuất xứ"
+                        android:textSize="15dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thiết kế trọng lượng"
+            android:textSize="23dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txt_kichthuoc_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kích thước mh"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txt_trongluong_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trọng lượng"
+                android:textSize="15dp" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txt_mausac_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Màu sắc"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txt_chatlieu_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chất liệu"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thông số kĩ thuật"
+            android:textSize="23dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"/>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+
+
+                <TextView
+                    android:id="@+id/txt_cpu_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CPU"
+                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/txt_ram_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RAM"
+                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/txt_card_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Card"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txt_congUSB_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cổng USB"
+                    android:textSize="15dp" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/txt_ocung_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ổ cứng"
+                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/txt_rom_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ROM"
+                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/tocdoCPU_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tốc độ CPU"
+                    android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/txt_vantay_chitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vân tay"
+                    android:textSize="15dp" />
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

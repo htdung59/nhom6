@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LapMarket</string>
+    <string name="sign_up">Don\'t have an account? <b>Sign up</b></string>
+    <string name="quenmk"><u>forgot password?</u></string>
+    <string name="xemthem"><b>Xem Thêm</b></string>
+    <string name="back">Do you already have an account? <b>Sign in</b></string>
+    <string name="open">Open nav</string>
+    <string name="close">Close nav</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
