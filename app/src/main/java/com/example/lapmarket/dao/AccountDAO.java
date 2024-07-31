@@ -8,29 +8,22 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.example.lapmarket.database.DbHelper;
 import com.example.lapmarket.designPantter.AccountSingle;
 import com.example.lapmarket.model.account;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class AccountDAO {
 
     SharedPreferences sharedPreferences;
-
     DbHelper dbHelper;
 
     public AccountDAO(Context context) {
         dbHelper = new DbHelper(context);
         sharedPreferences = context.getSharedPreferences("THONGTIN", MODE_PRIVATE);
-
     }
-
 
     public ArrayList<account> selectALL_Account() {
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
@@ -71,8 +64,8 @@ public class AccountDAO {
         }
     }
 
-    //singup
-    public boolean signup(String hoten, String matkhau, String email) {
+    // Signup method updated to include account type
+    public boolean signup(String hoten, String matkhau, String email, String role) {
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.query("ACCOUNT", null, "email = ?",
                 new String[]{email}, null, null, null);
@@ -85,6 +78,7 @@ public class AccountDAO {
         contentValues.put("hoten", hoten);
         contentValues.put("matkhau", matkhau);
         contentValues.put("email", email);
+        contentValues.put("role", role); // Add this line
         try {
             long check = sqLiteDatabase.insertOrThrow("ACCOUNT", null, contentValues);
             dbHelper.resetLocalData();
@@ -97,7 +91,8 @@ public class AccountDAO {
         }
     }
 
-    //quenmk
+
+    // Forgot password
     public String fogotpass(String email) {
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT matkhau FROM ACCOUNT WHERE email = ? ", new String[]{email});
@@ -108,12 +103,11 @@ public class AccountDAO {
         return "";
     }
 
-
-    // doimk
-    public boolean capNhatMatKhau(String email, String mathauCu, String matkhauMoi) {
+    // Change password
+    public boolean capNhatMatKhau(String email, String matkhauCu, String matkhauMoi) {
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM ACCOUNT WHERE email = ? AND matkhau = ? ",
-                new String[]{email, mathauCu});
+                new String[]{email, matkhauCu});
         if (cursor.getCount() > 0) {
             ContentValues contentValues = new ContentValues();
             contentValues.put("matkhau", matkhauMoi);
@@ -125,9 +119,4 @@ public class AccountDAO {
         }
         return false;
     }
-
-
-
 }
-
-

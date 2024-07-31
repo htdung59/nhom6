@@ -6,25 +6,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbHelper extends SQLiteOpenHelper {
     public DbHelper(Context context) {
-        super(context, "LapMarket", null, 42);
+        super(context, "LapMarket", null, 43);
 
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         String account = "CREATE TABLE ACCOUNT(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                " hoten TEXT, " +
+                "hoten TEXT, " +
                 "matkhau TEXT," +
                 "email TEXT," +
                 "loaitaikhoan TEXT)";
         db.execSQL(account);
 
-        db.execSQL("INSERT INTO ACCOUNT VALUES (1,'admin','admin','anhlabachu2004@gmail.com', 'admin')," +
-                "(2,'admin','admin','admin', 'admin')," +
-                "(3,'user1','user1','user1', 'user')," +
-                "(4,'user2','user2','user2', 'user')");
+        db.execSQL("INSERT INTO ACCOUNT (hoten, matkhau, email, loaitaikhoan) VALUES ('admin', 'admin', 'admin@gmail.com', 'admin')," +
+                "('user1', 'user1', 'user1@gmail.com', 'user')," +
+                "('user2', 'user2', 'user2@gmail.com', 'user')");
 
 
         String sanpham_home = "CREATE TABLE SANPHAM(masp INTEGER PRIMARY KEY AUTOINCREMENT," +
