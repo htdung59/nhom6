@@ -5,15 +5,21 @@
     android:padding="10dp"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="400px"
+        android:src="@drawable/logo"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ĐĂNG KÍ TÀI KHOẢN"
         android:gravity="center"
         android:textSize="23dp"
-        android:layout_marginTop="100sp"
         android:padding="10dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#E91E63"/>
 
     <LinearLayout
         android:paddingLeft="30sp"
@@ -110,7 +116,7 @@
             android:layout_height="wrap_content"
             android:text="SIGN UP"
             android:textSize="23dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:background="#E88364"
             />

@@ -184,4 +184,27 @@ public class sanpham {
     public void setVantay(String vantay) {
         this.vantay = vantay;
     }
+
+
+    public String tostring() {
+        return "sanpham{" +
+                "masp=" + masp +
+                ", tensp='" + tensp + '\'' +
+                ", gia=" + gia +
+                ", thuonghieu='" + thuonghieu + '\'' +
+                ", xuatxu='" + xuatxu + '\'' +
+                ", kichthuocmanhinh='" + kichthuocmanhinh + '\'' +
+                ", mausac='" + mausac + '\'' +
+                ", trongluong='" + trongluong + '\'' +
+                ", chatlieu='" + chatlieu + '\'' +
+                ", cpu='" + cpu + '\'' +
+                ", ocung='" + ocung + '\'' +
+                ", ram='" + ram + '\'' +
+                ", rom='" + rom + '\'' +
+                ", card='" + card + '\'' +
+                ", tocdocpu='" + tocdocpu + '\'' +
+                ", congusb='" + congusb + '\'' +
+                ", vantay='" + vantay + '\'' +
+                '}';
+    }
 }

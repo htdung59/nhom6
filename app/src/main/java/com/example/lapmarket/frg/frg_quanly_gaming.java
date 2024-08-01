@@ -7,9 +7,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,49 +18,47 @@ import android.widget.Toast;
 
 import com.example.lapmarket.R;
 import com.example.lapmarket.adapter.QuanLyGamingAdapter;
-import com.example.lapmarket.adapter.QuanLySanPhamAdapter;
+import com.example.lapmarket.adapter.SanphamAdapter;
 import com.example.lapmarket.dao.SanPhamDAO;
 import com.example.lapmarket.model.sanpham;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-
 public class frg_quanly_gaming extends Fragment {
     SanPhamDAO sanPhamDAO;
     ArrayList<sanpham> list;
     ArrayList<sanpham> list1;
 
-    QuanLyGamingAdapter quanLyGamingAdapter;
-    RecyclerView recyclerQuanliSP;
-
+    SanphamAdapter sanphamAdapter;
+    RecyclerView recyclerSanpham;
 
     public frg_quanly_gaming() {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_frg_quanly_gaming, container, false);
+        View view = inflater.inflate(R.layout.fragment_frg_quanly_gaming, container, false);
 
-        FloatingActionButton float_add_gaming = view.findViewById(R.id.float_add_gaming);
-
-        recyclerQuanliSP = view.findViewById(R.id.recyclerView_quanli_gaming);
+//        FloatingActionButton float_add_gaming = view.findViewById(R.id.float_add_gaming);
+        recyclerSanpham = view.findViewById(R.id.recyclerView_quanli_gaming);
         SearchView searchView = view.findViewById(R.id.search_quanly_gaming);
-
         loadData();
 
-        //tìm kiếm
+        // Initialize list and adapter
         list1 = sanPhamDAO.selectGAMING();
+
+
+
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -74,29 +72,27 @@ public class frg_quanly_gaming extends Fragment {
                     if (String.valueOf(tv.getTensp()).contains(newText) || String.valueOf(tv.getGia()).contains(newText) ){
                         list.add(tv);
                     }
-                    quanLyGamingAdapter.notifyDataSetChanged();
+                    sanphamAdapter.notifyDataSetChanged();
                 }
                 return false;
             }
         });
 
-        float_add_gaming.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showdialogThem();
-            }
-        });
+//        float_add_gaming.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showdialogThem();
+//            }
+//        });
         return view;
     }
 
-    public void showdialogThem(){
+    private void showdialogThem() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.item_add_sanpham, null);
         builder.setView(view);
 
-
-        //
         EditText edt_tensp_add = view.findViewById(R.id.edt_tensp_add);
         EditText edt_giasp_add = view.findViewById(R.id.edt_giasp_add);
         EditText edt_thuonghieu_add = view.findViewById(R.id.edt_thuonghieu_add);
@@ -117,7 +113,6 @@ public class frg_quanly_gaming extends Fragment {
         builder.setPositiveButton("Hủy", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
             }
         });
 
@@ -141,20 +136,20 @@ public class frg_quanly_gaming extends Fragment {
                 String congusb_add = edt_congusb_add.getText().toString();
                 String vantay_add = edt_vantay_add.getText().toString();
 
-
-
-                if ( tensp_add.isEmpty() || giasp_add.isEmpty()  || thuonghieu_add.isEmpty() || xuatxu_add.isEmpty() || kichthuocmanhinh_add.isEmpty() || mausac_add.isEmpty() || trongluong_add.isEmpty() || chatlieu_add.isEmpty() || cpu_add.isEmpty() || ocung_add.isEmpty() || ram_add.isEmpty() || rom_add.isEmpty() || card_add.isEmpty() || tocdocpu_add.isEmpty() || congusb_add.isEmpty() || vantay_add.isEmpty()){
-
+                if (tensp_add.isEmpty() || giasp_add.isEmpty() || thuonghieu_add.isEmpty() || xuatxu_add.isEmpty() ||
+                        kichthuocmanhinh_add.isEmpty() || mausac_add.isEmpty() || trongluong_add.isEmpty() || chatlieu_add.isEmpty() ||
+                        cpu_add.isEmpty() || ocung_add.isEmpty() || ram_add.isEmpty() || rom_add.isEmpty() ||
+                        card_add.isEmpty() || tocdocpu_add.isEmpty() || congusb_add.isEmpty() || vantay_add.isEmpty()) {
                     Toast.makeText(getContext(), "Không được để trống dữ liệu", Toast.LENGTH_SHORT).show();
+                } else {
+                    boolean check = sanPhamDAO.addGAM(tensp_add, Integer.parseInt(giasp_add), thuonghieu_add, xuatxu_add,
+                            kichthuocmanhinh_add, mausac_add, trongluong_add, chatlieu_add, cpu_add, ocung_add, ram_add, rom_add,
+                            card_add, tocdocpu_add, congusb_add, vantay_add);
 
-                }else {
-                    boolean check = sanPhamDAO.addGAM(tensp_add, Integer.parseInt(giasp_add), thuonghieu_add, xuatxu_add , kichthuocmanhinh_add, mausac_add, trongluong_add, chatlieu_add, cpu_add, ocung_add, ram_add, rom_add, card_add,tocdocpu_add,congusb_add,vantay_add );
-
-                    if (check){
+                    if (check) {
                         Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
                         loadData();
-
-                    }else {
+                    } else {
                         Toast.makeText(getContext(), "Thêm thất bại", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -163,18 +158,17 @@ public class frg_quanly_gaming extends Fragment {
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
     }
 
     public void loadData(){
         sanPhamDAO = new SanPhamDAO(getContext());
         list = sanPhamDAO.selectGAMING();
 
-
         GridLayoutManager gridLayoutManager = new GridLayoutManager(requireActivity(),2);
-        recyclerQuanliSP.setLayoutManager(gridLayoutManager);
+        recyclerSanpham.setLayoutManager(gridLayoutManager);
 
-        quanLyGamingAdapter = new QuanLyGamingAdapter(getContext(), list, sanPhamDAO);
-        recyclerQuanliSP.setAdapter(quanLyGamingAdapter);
+        sanphamAdapter = new SanphamAdapter(getContext(), list, sanPhamDAO, null);
+        recyclerSanpham.setAdapter(sanphamAdapter);
     }
+
 }

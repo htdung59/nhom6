@@ -25,14 +25,16 @@ import java.util.ArrayList;
 public class QuanLyGamingAdapter extends RecyclerView.Adapter<QuanLyGamingAdapter.ViewHolder> {
     private Context context;
     private ArrayList<sanpham> list;
-
+    private ArrayList<sanpham> fullList;
     private SanPhamDAO sanPhamDAO;
 
     public QuanLyGamingAdapter(Context context, ArrayList<sanpham> list, SanPhamDAO sanPhamDAO) {
         this.context = context;
         this.list = list;
+        this.fullList = new ArrayList<>(list);  // Create a full copy of the original list
         this.sanPhamDAO = sanPhamDAO;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -43,33 +45,31 @@ public class QuanLyGamingAdapter extends RecyclerView.Adapter<QuanLyGamingAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txt_tensp.setText(list.get(position).getTensp());
-        holder.txt_gia.setText("Giá: " + Amount.moneyFormat( list.get(position).getGia()));
+        sanpham product = list.get(position);
+        holder.txt_tensp.setText(product.getTensp());
+        holder.txt_gia.setText("Giá: " + Amount.moneyFormat(product.getGia()));
+
         holder.txt_xemthem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showdialogXemThem(list.get(holder.getAdapterPosition()));
+                showdialogXemThem(product);
             }
         });
 
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context); //tạo dối tượng
-                builder.setIcon(R.drawable.canhbao); //set icon
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setIcon(R.drawable.canhbao);
                 builder.setMessage("Bạn chắc chắn muốn xóa");
-
-
                 builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
-                        //
-                        boolean check = sanPhamDAO.deleteGAM(list.get(holder.getAdapterPosition()).getMasp());
-                        if (check){
+                        boolean check = sanPhamDAO.deleteGAM(product.getMasp());
+                        if (check) {
                             loadData();
                             Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
-                        }else {
+                        } else {
                             Toast.makeText(context, "Xóa thất bại", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -80,7 +80,7 @@ public class QuanLyGamingAdapter extends RecyclerView.Adapter<QuanLyGamingAdapte
                         Toast.makeText(context, "Không xóa", Toast.LENGTH_SHORT).show();
                     }
                 });
-                AlertDialog dialog = builder.create(); //tạo hộp thoại
+                AlertDialog dialog = builder.create();
                 dialog.show();
             }
         });
@@ -88,7 +88,7 @@ public class QuanLyGamingAdapter extends RecyclerView.Adapter<QuanLyGamingAdapte
         holder.btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogUpdate(list.get(holder.getAdapterPosition()));
+                dialogUpdate(product);
             }
         });
     }
@@ -98,22 +98,49 @@ public class QuanLyGamingAdapter extends RecyclerView.Adapter<QuanLyGamingAdapte
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView txt_tensp, txt_gia, txt_xemthem;
-        Button btn_delete , btn_update;
+    public void filterList(String query) {
+        query = query.toLowerCase();
+        list.clear();
 
+        if (query.isEmpty()) {
+            list.addAll(fullList);  // Sử dụng fullList để lấy tất cả các sản phẩm
+        } else {
+            for (sanpham sp : fullList) {
+                if (sp.getTensp().toLowerCase().contains(query)) {
+                    list.add(sp);
+                }
+            }
+        }
+        notifyDataSetChanged();  // Cập nhật lại giao diện người dùng
+    }
+
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView txt_tensp, txt_gia, txt_xemthem;
+        Button btn_delete, btn_update;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             txt_tensp = itemView.findViewById(R.id.txt_tensp_home_ql);
             txt_gia = itemView.findViewById(R.id.txt_giasp_home_ql);
             txt_xemthem = itemView.findViewById(R.id.txt_xemthem_home_ql);
-
             btn_delete = itemView.findViewById(R.id.btn_deletesp_ql);
             btn_update = itemView.findViewById(R.id.btn_updatesp_ql);
         }
     }
+
+    // Your dialog methods here...
+
+    public void loadData() {
+        list.clear();
+        list.addAll(sanPhamDAO.selectGAMING());  // Lấy danh sách sản phẩm mới từ cơ sở dữ liệu
+        fullList = new ArrayList<>(list);  // Cập nhật fullList
+        notifyDataSetChanged();
+    }
+
+
+
     private void showdialogXemThem(sanpham sanPham){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
@@ -271,9 +298,4 @@ public class QuanLyGamingAdapter extends RecyclerView.Adapter<QuanLyGamingAdapte
         alertDialog.show();
     }
 
-    public void loadData(){
-        list.clear();
-        list = sanPhamDAO.selectGAMING();
-        notifyDataSetChanged();
-    }
 }
