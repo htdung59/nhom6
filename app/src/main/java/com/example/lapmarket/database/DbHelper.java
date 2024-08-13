@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DbHelper extends SQLiteOpenHelper {
+public class  DbHelper extends SQLiteOpenHelper {
     public DbHelper(Context context) {
         super(context, "LapMarket", null, 44);
 
@@ -20,8 +20,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 "loaitaikhoan TEXT)";
         db.execSQL(account);
 
-        db.execSQL("INSERT INTO ACCOUNT (hoten, matkhau, email, loaitaikhoan) VALUES ('admin', 'admin', 'admin@gmail.com', 'admin')," +
+        db.execSQL("INSERT INTO ACCOUNT (hoten, matkhau, email, loaitaikhoan) VALUES " +
+                "('admin', 'admin', 'admin@gmail.com', 'admin')," +
                 "('user1', 'user1', 'user1@gmail.com', 'user')," +
+                "('Vanthu', 'Vanthu2k4', 'lythu2k4lc@gmail.com', 'user')," +
                 "('user2', 'user2', 'user2@gmail.com', 'user')");
 
 

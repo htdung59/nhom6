@@ -49,11 +49,6 @@ public class GioHangDAO {
     }
 
 
-//    public void deleteFromCart(int magh) {
-//        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-//        sqLiteDatabase.delete("GIOHANG", "ID=?", new String[]{String.valueOf(magh)});
-//        sqLiteDatabase.close();
-//    }
 
 
     public void updateQuantity(int ID, int newQuantity) {
@@ -72,12 +67,6 @@ public class GioHangDAO {
             if (magh >= 0) {
                 sqLiteDatabase.delete("GIOHANG", "id=?", new String[]{String.valueOf(magh)});
             }
-
-//
-//            if (sqLiteDatabase != null && sqLiteDatabase.isOpen()) {
-//                sqLiteDatabase.close();
-//            }
-//
     }
 
 
